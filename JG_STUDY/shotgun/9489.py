@@ -20,6 +20,9 @@ def solution():
     target_depth = 0
     
     for num in num_list[1:]:
+      if num == target:
+        target_depth = cur_depth
+        
       if prev + 1 == num:
         depth[cur_depth].append(num)
       else:
@@ -27,8 +30,6 @@ def solution():
         depth[cur_depth].append(num)
 
       prev = num
-      
-    print('target_depth', target_depth)
     
     cnt, rng = 0, 1
     strt, end = 0, 0
@@ -36,41 +37,18 @@ def solution():
     llist = []
     for idx, d in enumerate(depth):
       if idx == parent:
-        print(parent)
         if parent < target_depth:
           strt = parent
         llist.append(parent)
         parent += len(d)
   
-  
-    end = llist[llist.index(strt) + 1]
+    if strt != 0:
+      end = llist[llist.index(strt) + 1]
     answer = 0
     for idx in range(strt + 1, end + 1):
       if target in depth[idx]: continue
-      print(depth[idx])
       answer += len(depth[idx])
       
     print(answer)
     
-    
-      
-
-    
-    
 solution()
-# 1
-# 3 4 5
-# 8 9
-# 15
-# 30 31 32
-
-# 3 
-# ---
-# 5 6
-# ---
-# 8 9 10
-# 13
-# ---
-# 15 16
-# 22 23
-# 25
