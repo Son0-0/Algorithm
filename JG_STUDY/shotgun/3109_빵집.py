@@ -6,7 +6,7 @@ input = sys.stdin.readline
 r, c = map(int, input().split())
 _map = [list(map(str, input().strip())) for _ in range(r)]
 visited = [[0 for _ in range(c)] for _ in range(r)]
-dx, dy = [-1, 0, 1], [1, 1, 1]
+dx, dy = [1, 0, -1], [1, 1, 1]
 cnt = 0
 
 
@@ -28,7 +28,7 @@ def dfs(cx, cy):
 def solution():
     global cnt
 
-    for idx in range(r):
+    for idx in range(r - 1, -1, -1):
         if _map[idx][0] == '.':
             tf = dfs(idx, 0)
             if tf == True:
