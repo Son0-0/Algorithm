@@ -10,7 +10,7 @@ def solution(genres, plays):
             answer[genres[idx]]['songs'].append([idx, plays[idx]])
 
     value = []
-    
+
     for result in sorted(answer, key=lambda x: answer.get(x)['total'], reverse=True):
         for idx, song in enumerate(sorted(answer[result]['songs'], key=lambda x: (x[1], -x[0]), reverse=True)):
             if idx == 2:
