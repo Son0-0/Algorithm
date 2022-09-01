@@ -6,7 +6,10 @@ func main() {
 	var N int
 	fmt.Scanf("%d", &N)
 
-	var dp [101][10]int
+	dp := make([][]int, N+1)
+	for i := range dp {
+		dp[i] = make([]int, 10)
+	}
 
 	for i := 1; i < 10; i++ {
 		dp[1][i] = 1
