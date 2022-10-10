@@ -4,3 +4,6 @@
 /etc
 *.txt
 tempCodeRunnerFile.py
+test.py
+test.go
+.vscode
