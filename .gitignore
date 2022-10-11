@@ -1,9 +1,19 @@
+# test or code test dir
 /test
 /line
 /kakao
 /etc
+
+# text file
 *.txt
+
+# temp, test file
 tempCodeRunnerFile.py
 test.py
 test.go
+
+# vscode
 .vscode
+
+# Pycharm
+.idea
