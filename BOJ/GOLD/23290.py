@@ -55,6 +55,7 @@ def move_fish():
     for tkey in temp_fish:
         fish[tkey] = temp_fish[tkey]
 
+
 def move_shark():
     global sx, sy
     max_fish = -1
@@ -121,6 +122,7 @@ def smell_check():
     for sk in temp_smell:
         smell[sk] = temp_smell[sk]
 
+
 def solution():
 
     for _ in range(s):
@@ -141,7 +143,7 @@ def solution():
             answer += fish[key][dkey]
     print(answer)
 
-
     return 0
+
 
 solution()
