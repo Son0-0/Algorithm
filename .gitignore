@@ -1,3 +1,6 @@
+# Mac OS
+.DS_Store
+
 # test or code test dir
 /test
 /line
