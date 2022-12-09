@@ -7,9 +7,9 @@ import (
 func check(nums []int) bool {
 	result := 0
 	length := len(nums)
-	
+
 	for i := 0; i < length; i++ {
-		if nums[(i + 1) % length] < nums[i] {
+		if nums[(i+1)%length] < nums[i] {
 			result += 1
 		}
 	}
