@@ -22,3 +22,4 @@ test.go
 
 # Pycharm
 .idea
+.vim/coc-settings.json
