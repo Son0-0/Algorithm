@@ -49,31 +49,27 @@ func sampleStats(count []int) []float64 {
 			}
 		}
 	} else {
-		left, right := 0, 0
+		cnt := 0
 
 		for idx, num := range count {
 			temp += num
 
-			if half+1 <= temp {
-				left = idx
-				right = idx
-				break
-			} else if temp == half {
-				left = idx
-				for k := idx + 1; k < length; k++ {
-					if count[k] != 0 {
-						right = k
-						break
+			if half <= temp {
+				cnt -= 1
+				if half+1 <= temp {
+					result[3] = float64(idx)
+					return result
+				} else {
+					for j := idx + 1; j < 256; j++ {
+						if count[j] != 0 {
+							result[3] = float64(idx+j) / 2
+							return result
+						}
 					}
 				}
-				break
 			}
 		}
-		result[3] = float64(left+right) / 2
-		return result
 	}
-
-	// result[3] = float64(left+right) / 2
 
 	return result
 }
