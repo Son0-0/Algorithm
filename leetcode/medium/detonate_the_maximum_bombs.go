@@ -37,6 +37,10 @@ func maximumDetonation(bombs [][]int) int {
 			}
 		}
 
+		if temp == len(bombs) {
+			return temp
+		}
+
 		if result < temp {
 			result = temp
 		}
