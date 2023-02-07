@@ -11,14 +11,10 @@ type TreeNode struct {
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	result := false
 
-	if root == nil {
-		return result
-	}
-
 	var inorder func(*TreeNode, int)
 
 	inorder = func(cur *TreeNode, sum int) {
-		if cur == nil {
+		if cur == nil || result == true {
 			return
 		}
 
