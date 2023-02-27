@@ -5,22 +5,16 @@ import (
 	"math"
 )
 
-var MAX = 500*5*10000 + 1 // max weigth
-
-func returnMinMaxValue(target []int) (int, int) {
-	min, max := MAX, -1
+func max(target []int) int {
+	max := -1
 
 	for _, num := range target {
-		if num < min {
-			min = num
-		}
-
 		if max < num {
 			max = num
 		}
 	}
 
-	return min, max
+	return max
 }
 
 func calc(target []int, max int) int {
@@ -39,17 +33,17 @@ func calc(target []int, max int) int {
 }
 
 func shipWithinDays(weights []int, days int) int {
-	result := MAX
+	result := 500*5*10000 + 1 // max weigth
 
 	cnt := int(math.Ceil(float64(len(weights)) / float64(days)))
 
-	left, max := returnMinMaxValue(weights)
-	right := max * cnt
+	maxWeight := max(weights)
+	left, right := 0, maxWeight*cnt
 
 	for left <= right {
 		mid := (left + right) / 2
 
-		if mid < max {
+		if mid < maxWeight {
 			left = mid + 1
 			continue
 		}
