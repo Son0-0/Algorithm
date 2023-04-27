@@ -23,3 +23,6 @@ test.go
 # Pycharm
 .idea
 .vim/coc-settings.json
+
+# Leetcode Weekly Contest
+/weekly-contest
