@@ -45,7 +45,12 @@ func minCostConnectPoints(points [][]int) int {
 		return cur
 	}
 
+	cnt := 0
 	for _, edge := range edges {
+		if cnt == size-1 {
+			break
+		}
+
 		distance, src, dest := edge[0], edge[1], edge[2]
 
 		srcParent := find(src)
@@ -62,6 +67,7 @@ func minCostConnectPoints(points [][]int) int {
 		}
 
 		result += distance
+		cnt++
 	}
 
 	return result
