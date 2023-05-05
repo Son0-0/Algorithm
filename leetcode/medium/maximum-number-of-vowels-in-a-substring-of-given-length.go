@@ -2,20 +2,36 @@ package main
 
 import "fmt"
 
-func maxVowels(s string, k int) int {
-    result := 0
+func check(c byte) bool {
+	return c == 'a' || c =='e' || c == 'i' || c == 'o' || c == 'u'
+}
 
-	cur, pos := 0, k-1
+func maxVowels(s string, k int) int {
+	cur := 0
 
 	for i := 0; i < k; i++ {
 		target := s[i]
 
-		if target == 'a' || target =='e' || target == 'i' || target == 'o' || target == 'u' {
+		if check(target) {
 			cur++
 		}
 	}
 
-	fmt.Println(cur, pos)
+	result := cur
+
+	for i := k; i < len(s); i++ {
+		if check(s[i]) {
+			cur++
+		}
+
+		if check(s[i-k]) {
+			cur--
+		}
+
+		if result < cur {
+			result = cur
+		}
+	}
 
 	return result
 }
