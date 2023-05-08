@@ -4,6 +4,16 @@ import "fmt"
 
 func diagonalSum(mat [][]int) int {
 	result := 0
+	size := len(mat)
+
+	if size%2 == 1 {
+		target := size / 2
+		result -= mat[target][target]
+	}
+
+	for i := 0; i < size; i++ {
+		result += mat[i][size-i-1] + mat[i][i]
+	}
 
 	return result
 }
