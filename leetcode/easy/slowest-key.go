@@ -8,9 +8,10 @@ func slowestKey(releaseTimes []int, keysPressed string) byte {
 	cur := 0
 
 	for idx, time := range releaseTimes {
-		fmt.Println(time - cur)
 		if maxDuration < time-cur {
 			maxDuration = time - cur
+			maxAlpha = keysPressed[idx]
+		} else if maxDuration == time-cur {
 			if maxAlpha < keysPressed[idx] {
 				maxAlpha = keysPressed[idx]
 			}
@@ -22,5 +23,6 @@ func slowestKey(releaseTimes []int, keysPressed string) byte {
 }
 
 func main() {
+	fmt.Println(slowestKey([]int{9, 29, 49, 50}, "cbcd"))
 	fmt.Println(slowestKey([]int{12, 23, 36, 46, 62}, "spuda"))
 }
