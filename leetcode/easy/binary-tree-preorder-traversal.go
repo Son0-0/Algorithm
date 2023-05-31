@@ -7,21 +7,21 @@
  * }
  */
 func preorderTraversal(root *TreeNode) []int {
-    result := []int{}
+	result := []int{}
 
-    var preorder func(*TreeNode)
+	var preorder func(*TreeNode)
 
-    preorder = func(cur *TreeNode) {
-        if cur == nil {
-            return
-        }
+	preorder = func(cur *TreeNode) {
+		if cur == nil {
+			return
+		}
 
-        result = append(result, cur.Val)
-        preorder(cur.Left)
-        preorder(cur.Right)
-    }
+		result = append(result, cur.Val)
+		preorder(cur.Left)
+		preorder(cur.Right)
+	}
 
-    preorder(root)
+	preorder(root)
 
-    return result
+	return result
 }
