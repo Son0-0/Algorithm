@@ -10,11 +10,11 @@ func max(a, b int) int {
 }
 
 func largestAltitude(gain []int) int {
-	result, cur := 0, 0
+	result, start := 0, 0
 
-	for _, num := range gain {
-		cur += num
-		result = max(result, cur)
+	for _, g := range gain {
+		start += g
+		result = max(result, start)
 	}
 
 	return result
