@@ -1,5 +1,8 @@
-algo:
-	sh daily-commit.sh
+algo-leetcode:
+	sh daily-commit-leetcode.sh
+
+algo-boj:
+	sh daily-commit-boj.sh
 
 lc-easy:
 	echo "make lc-easy 'problem'"
@@ -13,4 +16,4 @@ lc-hard:
 	echo "make lc-hard 'problem'"
 	sh leetcode.sh hard ${problem}
 
-.PHONY: algo lc-easy lc-medium lc-hard
+.PHONY: algo-leetcode algo-boj lc-easy lc-medium lc-hard
