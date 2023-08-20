@@ -1,19 +1,16 @@
 algo-leetcode:
-	sh daily-commit-leetcode.sh
+	sh ./command/daily-commit/leetcode.sh
 
 algo-boj:
-	sh daily-commit-boj.sh
+	sh ./command/daily-commit/boj.sh
 
 lc-easy:
-	echo "make lc-easy 'problem'"
-	sh leetcode.sh easy ${problem}
+	sh ./command/leetcode/createFile.sh easy ${problem} ${lang}
 
 lc-medium:
-	echo "make lc-medium 'problem'"
-	sh leetcode.sh medium ${problem}
+	sh ./command/leetcode/createFile.sh medium ${problem} ${lang}
 
 lc-hard:
-	echo "make lc-hard 'problem'"
-	sh leetcode.sh hard ${problem}
+	sh ./command/leetcode/createFile.sh hard ${problem} ${lang}
 
 .PHONY: algo-leetcode algo-boj lc-easy lc-medium lc-hard
