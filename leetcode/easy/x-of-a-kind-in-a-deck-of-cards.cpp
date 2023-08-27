@@ -8,10 +8,6 @@ using namespace std;
 bool hasGroupsSizeX(vector<int>& deck) {
     int n = deck.size();
 
-    if (n % 2 == 1) {
-        return false;
-    }
-
     unordered_map<int, int> um;
 
     for (auto num : deck) {
